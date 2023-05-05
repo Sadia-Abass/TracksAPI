@@ -22,7 +22,8 @@ libraryDependencies ++= Seq(
   "io.circe"      %% "circe-generic-extras" % CirceGenericExtraVersion,
   "org.scalactic" %% "scalactic"           % ScalacticVersion,
   "org.scalatest" %% "scalatest"           % Scalatest        % "test",
-  "is.cir"        %% "ciris"               % cirisVersion
+  "is.cir"        %% "ciris"               % cirisVersion,
+  "ch.qos.logback" % "logback-classic" % "1.2.11"
 )
 
 //addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.12")

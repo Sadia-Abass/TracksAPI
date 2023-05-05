@@ -11,7 +11,7 @@ import cats.implicits._
 import cats.syntax.MonadSyntax
 import com.bbcsounds.tracksapi.config.Config.config
 import com.bbcsounds.tracksapi.domain.Track
-import com.bbcsounds.tracksapi.services.TrackServices.TrackServices
+//import com.bbcsounds.tracksapi.services.TrackServices.TrackServices
 import org.http4s.Request
 import org.http4s.server.{DefaultServiceErrorHandler, Router}
 import sun.rmi.transport.Endpoint

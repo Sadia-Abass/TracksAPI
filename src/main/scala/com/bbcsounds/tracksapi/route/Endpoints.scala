@@ -15,14 +15,14 @@ object Endpoints{
  def trackRoute(trackData: TracksData): HttpRoutes[IO] = {
     val dsl = Http4sDsl[IO]
    import dsl._
-    implicit val trackDecoder = jsonOf[IO, Track]
-    implicit  val trackEncoder = jsonEncoderOf[Track]
+   implicit val trackDecoder: EntityDecoder[IO, Track] = jsonOf[IO, Track]
+   implicit val trackEncoder: EntityEncoder.Pure[Track] = jsonEncoderOf[Track]
 
       HttpRoutes.of[IO] {
         case GET -> Root / "tracks" / trackId =>
-          trackData.getTrackById(trackId).flatMap {
-            case _ => NotFound(s"No track with id $trackId found")
+          trackData.getTrackById(trackId).flatMap { //flatMap
             case Some(track) => Ok(track.asJson)
+            case _ => NotFound(s"No track with id $trackId found")
           }
       case req @ POST -> Root / "tracks" =>
       for {
@@ -33,12 +33,8 @@ object Endpoints{
          } yield response
 
       }
+
  }
-
-
-
-
-
 }
 
 

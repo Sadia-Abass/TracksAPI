@@ -7,6 +7,9 @@ import org.http4s.blaze.server.BlazeServerBuilder
 import com.bbcsounds.tracksapi.services.TracksData
 import com.bbcsounds.tracksapi.services.TracksData.TrackServices
 import org.http4s.{HttpRoutes, Request}
+//  org.slf4j.impl.StaticLoggerBinder
+import org.http4s.util.CaseInsensitiveString
+
 
 import org.http4s.dsl.io._
 object Main extends IOApp {
